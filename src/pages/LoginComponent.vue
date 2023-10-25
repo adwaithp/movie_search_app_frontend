@@ -63,14 +63,16 @@
           .then(response => response.json())
           .then(data => {
             if (data.token) {
-              this.$store.commit('setToken', data.token);
-              console.log(this.$store.state.token)
-              this.$store.commit('setAuthenticated', true);
+              window.$cookies.set('auth_token', data.token, '1d');
+              if (window.$cookies.get('auth_token') != ''){
+                this.$store.commit('setAuthenticated', true);
+              }
               console.log(this.$store.state.authenticated)
               this.$router.push('/movie_list');
             } else {
+              window.$cookies.set('auth_token', '', '1d');
                 this.$store.commit('setAuthenticated', false);
-                this.$store.commit('setToken', '');
+                
             }
           })
           .catch(error => {

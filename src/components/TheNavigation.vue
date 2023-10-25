@@ -53,7 +53,7 @@
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Token ${this.$store.state.token}`, // Include the token in the Authorization header
+              'Authorization': `Token ${window.$cookies.get('auth_token')}`, // Include the token in the Authorization header
             },
           });
   

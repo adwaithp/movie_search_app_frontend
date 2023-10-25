@@ -19,7 +19,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    const isAuthenticated = localStorage.getItem('token');
+    const isAuthenticated = window.$cookies.get('auth_token')
     if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
         // If the route requires authentication and the user is not authenticated, redirect to the login page
         next('/login');

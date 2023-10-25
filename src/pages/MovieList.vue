@@ -63,7 +63,7 @@
     methods: {
       async fetchMovieDetails(movieId) {
         // Access the token from your store's state
-        const token = this.$store.state.token;
+        const token = window.$cookies.get('auth_token')
   
         try {
           // Make an API request to fetch movie details for the given movieId
@@ -88,7 +88,7 @@
   
       async searchMovies() {
         // Access the token from your store's state
-        const token = this.$store.state.token;
+        const token = window.$cookies.get('auth_token')
   
         try {
           // Make an API request to search for movies based on the searchQuery
@@ -102,7 +102,7 @@
   
           if (response.ok) {
             const data = await response.json();
-            this.movies = data.results; // Update the movies array with search results
+            this.movies = data; // Update the movies array with search results
           } else {
             console.error(`Error searching for movies: ${response.status}`);
           }
@@ -113,7 +113,7 @@
   
       async fetchAllMovies() {
         // Access the token from your store's state
-        const token = this.$store.state.token;
+        const token = window.$cookies.get('auth_token')
   
         try {
           // Make an API request to fetch all movies
