@@ -16,7 +16,6 @@
     </div>
     <!-- Movie List -->
     <div class="movie-list">
-      <!-- Loop through the movie data and display each movie -->
       <div
         class="movie-card"
         v-for="movie in movies"
@@ -149,7 +148,6 @@ export default {
 
 
 <style scoped>
-/* Add some basic styling */
 .movie-search {
   text-align: center;
   margin: 20px 0;

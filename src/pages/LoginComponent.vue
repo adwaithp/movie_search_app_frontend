@@ -2,7 +2,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <div class="panel panel-primary"> <!-- Add the panel-primary class -->
+          <div class="panel panel-primary">
             <div class="panel-heading">
               <h3 class="panel-title">Login</h3>
             </div>
@@ -51,7 +51,6 @@
     },
     methods: {
       loginUser() {
-        // Make a POST request to your Django login API
         console.log("Login function")
         fetch('http://127.0.0.1:8000/login/', {
           method: 'POST',
@@ -70,13 +69,13 @@
               console.log(this.$store.state.authenticated)
               this.$router.push('/movie_list');
             } else {
+              this.loginFailed = true
               window.$cookies.set('auth_token', '', '1d');
                 this.$store.commit('setAuthenticated', false);
                 
             }
           })
           .catch(error => {
-            // Handle errors
             console.error(error);
           });
       }
