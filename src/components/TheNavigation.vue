@@ -49,7 +49,7 @@
       async logout() {
         try {
           // API request to the logout endpoint to log the user out
-          const response = await fetch('http://127.0.0.1:8000/logout/', {
+          const response = await fetch('http://3.108.252.153:8000/logout/', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

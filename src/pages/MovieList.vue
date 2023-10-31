@@ -73,7 +73,7 @@ export default {
       const token = window.$cookies.get('auth_token');
 
       try {
-        const response = await fetch(`http://127.0.0.1:8000/movies/${movieId}/`, {
+        const response = await fetch(`http://3.108.252.153:8000/movies/${movieId}/`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -121,27 +121,27 @@ export default {
 
 
     async searchMovies() {
-      const url = `http://127.0.0.1:8000/movies?keyword=${this.searchQuery}&page=1`;
+      const url = `http://3.108.252.153:8000/movies?keyword=${this.searchQuery}&page=1`;
       await this.fetchDataFromAPI(url);
     },
 
     async fetchPage(page) {
       if (page < 1 || page > this.totalPages) return;
-      const url = `http://127.0.0.1:8000/movies?keyword=${this.searchQuery}&page=${page}`;
+      const url = `http://3.108.252.153:8000/movies?keyword=${this.searchQuery}&page=${page}`;
       await this.fetchDataFromAPI(url);
     },
     async resetSearch() {
     // Clear the search query
     this.searchQuery = '';
     // Fetch the first page of the entire movie list
-    this.fetchDataFromAPI('http://127.0.0.1:8000/movies?page=1');
+    this.fetchDataFromAPI('http://3.108.252.153:8000/movies?page=1');
   },
   },
 
 
   created() {
     // Call the API and list all movies when the component is created
-    this.fetchDataFromAPI('http://127.0.0.1:8000/movies?page=1');
+    this.fetchDataFromAPI('http://3.108.252.153:8000/movies?page=1');
   },
 };
 </script>
