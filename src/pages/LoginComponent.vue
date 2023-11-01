@@ -52,7 +52,7 @@
     methods: {
       loginUser() {
         console.log("Login function")
-        fetch('http://3.108.252.153:8000/login/', {
+        fetch('http://ec2-3-108-252-153.ap-south-1.compute.amazonaws.com/login/', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
