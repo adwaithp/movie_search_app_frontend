@@ -2,11 +2,13 @@ import { createRouter, createWebHistory } from "vue-router"
 import LoginComponent from './pages/LoginComponent.vue'
 import SignUp from './pages/SignUp.vue'
 import MovieList from './pages/MovieList.vue'
+import FavMovieList from './pages/FavMovieList.vue'
 
 
 const routes = [
     { path: '/login', component: LoginComponent },
     { path: '/signup', component: SignUp },
+    { path: '/favorates', component: FavMovieList },
     {
         path: '/movie_list',
         component: MovieList,

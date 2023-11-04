@@ -19,6 +19,12 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="nav navbar-nav">
               <!-- Show "Login" and "Signup" when not authenticated -->
+              <li v-if="authenticated">
+                <router-link to="/movie_list"><button class="btn btn-primary">Movies</button></router-link>
+              </li>
+              <li v-if="authenticated">
+                <router-link to="/favorates"><button class="btn btn-primary">Favorates</button></router-link>
+              </li>
               <li v-if="!authenticated">
                 <router-link to="/login"><button class="btn btn-primary">Login</button></router-link>
               </li>
@@ -49,7 +55,7 @@
       async logout() {
         try {
           // API request to the logout endpoint to log the user out
-          const response = await fetch('http://3.108.252.153:8000/logout/', {
+          const response = await fetch('http://127.0.0.1:8000/logout/', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
