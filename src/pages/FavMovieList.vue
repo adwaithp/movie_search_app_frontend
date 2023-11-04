@@ -56,7 +56,7 @@
         console.log("MOvie id",movieId)
         this.checkIfFavorite(movieId)
         try {
-          const response = await fetch(`http://127.0.0.1:8000/movies/${movieId}/`, {
+          const response = await fetch(`http://3.108.252.153:8000/movies/${movieId}/`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -79,7 +79,7 @@
         const token = window.$cookies.get('auth_token');
         if (this.isFavorite) {
           try {
-        const response = await fetch(`http://127.0.0.1:8000/favorites/add/${movie_id}`, {
+        const response = await fetch(`http://3.108.252.153:8000/favorites/add/${movie_id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -98,7 +98,7 @@
       }
         } else {
           try {
-          const response = await fetch(`http://127.0.0.1:8000/favorites/add/${movie_id}/`, {
+          const response = await fetch(`http://3.108.252.153:8000/favorites/add/${movie_id}/`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -121,7 +121,7 @@
       async checkIfFavorite(movieId) {
         const token = window.$cookies.get('auth_token');
         try {
-          const response = await fetch(`http://127.0.0.1:8000/favorites/add/${movieId}/`, {
+          const response = await fetch(`http://3.108.252.153:8000/favorites/add/${movieId}/`, {
             method: 'GET',
             headers: {
               'Content-Type': 'application/json',
@@ -148,7 +148,7 @@
     const token = window.$cookies.get('auth_token');
   
     try {
-      const response = await fetch('http://127.0.0.1:8000/favorites/', {
+      const response = await fetch('http://3.108.252.153:8000/favorites/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +173,7 @@
   
     created() {
       // Call the API and list all favorates movies when the component is created
-      this.fetchDataFromAPI('http://127.0.0.1:8000/favorites');
+      this.fetchDataFromAPI('http://3.108.252.153:8000/favorites');
     },
   };
   </script>
